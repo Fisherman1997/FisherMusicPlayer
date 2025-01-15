@@ -1,6 +1,6 @@
 import encrypt from './crypto'
 import crypto from 'crypto'
-import axios from 'axios'
+import * as axios from 'axios'
 import { PacProxyAgent } from 'pac-proxy-agent'
 import http from 'http'
 import https from 'https'

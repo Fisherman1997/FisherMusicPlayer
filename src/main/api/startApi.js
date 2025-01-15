@@ -1,5 +1,5 @@
 import os from 'os'
-import request from './util/request'
+import createRequest from './util/request'
 import modules from './generatedModules.js'
 
 // Helper function to get the IP address
@@ -21,18 +21,16 @@ export async function constructServer(route, moduleQuery) {
     if (!moduleDef) {
         throw new Error('路由不存在')
     }
-
     const query = {
         cookie: moduleQuery.cookie,
         ...moduleQuery.query,
         ...moduleQuery.body,
         ...moduleQuery.files
     }
-
     const addClientIp = (...params) => {
         const [url, options, headers, extraData = {}] = params
         const ip = getIpAddress()
-        return request(url, options, headers, { ...extraData, ip })
+        return createRequest(url, options, headers, { ...extraData, ip })
     }
 
     try {
