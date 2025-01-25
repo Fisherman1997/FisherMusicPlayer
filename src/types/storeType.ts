@@ -1,4 +1,4 @@
-type music = {
+export type music = {
     id: number
     url: string
     name: string

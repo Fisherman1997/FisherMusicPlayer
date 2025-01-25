@@ -25,7 +25,6 @@
     "@electron-toolkit/utils": "^3.0.0",
     "axios": "^1.7.9",
     "crypto": "^1.0.1",
-    "electron-updater": "^6.1.7",
     "md5": "^2.3.0",
     "music-metadata": "^10.6.5",
     "pac-proxy-agent": "^7.1.0",

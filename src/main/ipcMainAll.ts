@@ -39,7 +39,6 @@ ipcMain.on('maximize', () => controlWindow('maximize'))
 ipcMain.on('minimize', () => controlWindow('minimize'))
 ipcMain.on('unmaximize', () => controlWindow('unmaximize'))
 
-
 ipcMain.handle('request', async (_ev, { route, query, body, files }) => {
     const cookie = await session.defaultSession.cookies.get({})
     try {

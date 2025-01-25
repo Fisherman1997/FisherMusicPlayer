@@ -1,4 +1,4 @@
-import { app, shell, BrowserWindow, ipcMain } from "electron";
+import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
@@ -14,7 +14,7 @@ function bootstrap(mainWindow: BrowserWindow): void {
     // 监听窗口解除最大化事件
     mainWindow.on('unmaximize', () => {
         mainWindow.webContents.send('isMaximized_win', false)
-    });
+    })
 
     mainWindow.webContents.setWindowOpenHandler((details) => {
         shell.openExternal(details.url)
@@ -47,7 +47,6 @@ function createWindow(): void {
     bootstrap(mainWindow)
     import('./ipcMainAll')
 }
-
 
 app.whenReady().then(() => {
     electronApp.setAppUserModelId('com.electron_fishermusicplayer')
