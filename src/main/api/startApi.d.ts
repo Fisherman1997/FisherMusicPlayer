@@ -1,1 +1,5 @@
-export async function constructServer(route: string, moduleQuery: object): Promise<object>
+import ApiUrls from '../../types/preloadType'
+export async function constructServer(
+    route: (typeof ApiUrls)[number],
+    moduleQuery: object
+): Promise<object>

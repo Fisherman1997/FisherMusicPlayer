@@ -1,13 +1,13 @@
 import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 import { controlWindowType } from '../types/mainType'
-import { apiType, requestParams } from '../types/preloadType'
+import { apiType, ApiUrls, requestParams } from '../types/preloadType'
 import { RequestResponse } from '../types/requestResponse'
 
 // Custom APIs for renderer
 const api: apiType = {
     request: async <T>(
-        route: string,
+        route: (typeof ApiUrls)[number],
         { query = {}, body = {}, files }: requestParams
     ): Promise<RequestResponse<T>> => {
         return (await ipcRenderer.invoke('request', {
